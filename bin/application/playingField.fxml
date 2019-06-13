@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+
+<?import java.lang.*?>
+
+<?import java.util.*?>
+
+<?import javafx.scene.control.*?>
+
+<?import javafx.scene.image.*?>
+
+<?import javafx.scene.layout.*?>
+
+<?import javafx.scene.paint.*?>
+
+<?import javafx.scene.shape.*?>
+
+
+
+<AnchorPane id="AnchorPane" fx:id="Anchor" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseMoved="#mouseMoved" prefHeight="900.0" prefWidth="1200.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="application.gameControls">
+
+  <children>
+
+    <ImageView id="background.jpg" depthTest="INHERIT" fitHeight="881.0" fitWidth="1500.0" layoutX="0.0" layoutY="-8.0" preserveRatio="false">
+
+      <image>
+
+        <Image url="@../background.jpg" />
+
+      </image>
+
+    </ImageView>
+	<ImageView fx:id="logo" depthTest="INHERIT" fitHeight="300" fitWidth="500" layoutX="370" layoutY="250" preserveRatio="true">
+
+      <image>
+
+        <Image url="@../logo.png" />
+
+      </image>
+
+    </ImageView>
+
+	<ImageView fx:id="start" onMouseClicked="#handleStartButton" depthTest="INHERIT" fitHeight="300" fitWidth="500" layoutX="370" layoutY="250" preserveRatio="true">
+
+      <image>
+
+        <Image url="@../logo.png" />
+
+      </image>
+
+    </ImageView>
+    <StackPane fx:id="discardPile" layoutX="675.0" layoutY="333.0" prefHeight="100.0" prefWidth="100.0" visible="true" />
+	<TextField alignment="CENTER"  editable="false" layoutX="675.0" layoutY="520.0" opacity="0.58" prefHeight="21.0" prefWidth="120.0" text="Discard Pile" />
+
+    <Rectangle id="computer" arcHeight="10.0" arcWidth="10.0" fill="BLACK" height="175.0" layoutX="100.0" layoutY="0.0" opacity="0.19" stroke="BLACK" strokeType="INSIDE" width="1000.0" />
+
+    <HBox id="computerHbox" fx:id="computerHBox" layoutX="100.0" layoutY="13.0" prefHeight="174.0" prefWidth="1500.0" snapToPixel="false" spacing="5.0" />
+
+
+    <StackPane fx:id="drawPile" layoutX="400.0" layoutY="333.0" maxHeight="175.0" maxWidth="175.0" prefHeight="100.0" prefWidth="100.0" />
+
+	<TextField alignment="CENTER"  editable="false" layoutX="400.0" layoutY="520.0" opacity="0.58" prefHeight="21.0" prefWidth="130.0" text="Draw Pile" />
+
+	<Button fx:id="drawButton" layoutX="100.0" layoutY="400.0" onMouseClicked="#drawClicked" mnemonicParsing="false" text="DRAW CARD">
+      <graphic>
+        <ImageView fitHeight="100.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true">
+          <image>
+            <Image url="@../drawButton.png"/>
+          </image>
+        </ImageView>
+    </graphic>
+    <style>
+  	visibility: hidden;
+  	</style>
+    </Button>
+    <TextArea fx:id="txtField" editable="false" layoutX="100.0" layoutY="600.0" opacity="0.5" prefHeight="82.0" prefWidth="1000.0" wrapText="true" />
+	<Button fx:id="red" onMouseClicked="#redClicked" layoutX="950.0" layoutY="325.0" text="Red">
+		   <style>
+			     -fx-background-radius: 5em;
+	             -fx-min-width: 50px;
+	             -fx-min-height: 50px;
+	             -fx-max-width: 50px; 
+	             -fx-max-height: 50px;
+	             -fx-background-color: red;
+	             -fx-border-color: black;
+	             -fx-border-radius: 30;
+	             visibility: hidden;
+	       </style>
+	</Button>
+	<Button fx:id="green" onMouseClicked="#greenClicked" layoutX="950.0" layoutY="425.0" text="Green">
+		   <style>
+			     -fx-background-radius: 5em;
+	             -fx-min-width: 50px;
+	             -fx-min-height: 50px;
+	             -fx-max-width: 50px; 
+	             -fx-max-height: 50px;
+	             -fx-background-color: green;
+	             -fx-border-color: black;
+	             -fx-border-radius: 30;
+	             visibility: hidden;
+	       </style>
+	</Button>
+	
+	<Button fx:id="yellow" onMouseClicked="#yellowClicked" layoutX="900.0" layoutY="375.0" text="Yellow">
+		   <style>
+			     -fx-background-radius: 5em;
+	             -fx-min-width: 50px;
+	             -fx-min-height: 50px;
+	             -fx-max-width: 50px; 
+	             -fx-max-height: 50px;
+	             -fx-background-color: yellow;
+	             -fx-border-color: black;
+	             -fx-border-radius: 30;
+	             -fx-border-radius: 30;
+	             visibility: hidden;	             
+	       </style>
+	</Button>
+	
+	<Button fx:id="blue" onMouseClicked="#blueClicked" layoutX="1000.0" layoutY="375.0" text="Blue">
+		   <style>
+			     -fx-background-radius: 5em;
+	             -fx-min-width: 50px;
+	             -fx-min-height: 50px;
+	             -fx-max-width: 50px; 
+	             -fx-max-height: 50px;
+	             -fx-background-color: blue;
+	             -fx-border-color: black;
+	             -fx-border-radius: 30;
+	             visibility: hidden;
+
+	       </style>
+	</Button>
+	
+	
+	
+    <Rectangle id="human" arcHeight="0.0" arcWidth="0.0" fill="BLACK" height="207.0" layoutX="100.0" layoutY="671.0" onMouseEntered="#select" opacity="0.13" stroke="BLACK" strokeType="INSIDE" width="1000.0" />
+    <HBox fx:id="controlledPlayerHBox" layoutX="100.0" layoutY="675.0" mouseTransparent="false" prefHeight="200.0" prefWidth="2000.0" snapToPixel="false" spacing="5.0" />
+
+  </children>
+
+</AnchorPane>
