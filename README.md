@@ -1,5 +1,5 @@
 # UNO-in-JAVA
-JAVA FX application made for UNO
+JAVA FX application made for UNO.
 Uses FXML templates in order to create the interface for UNO and multiple java classes to control different states
   # Start Button
   <img align="center" src="Start.gif" width="100%"/>
